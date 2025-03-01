@@ -12,7 +12,7 @@ This course is a graduate-level introduction to Artificial Intelligence (AI). It
 | **Course Credits** | 4 |
 | **Pre-requisites** | Basic to Intermediate Math, Programming Experience in Python |
 | **Timetabling**  | Live Lectures: Saturday 11:15 am – 3:10 pm |
-| **Duration**     | Saturday, 22-Feb-2025 - Saturday, 31-May-2025 |
+| **Duration**     | Saturday, 01-Mar-2025 - Saturday, 7-July-2025 |
 | **Course Leader** | [Dr. Christopher Clarke](https://csclarke.com/) |
 | **Academic Year** | 2024/2025 |
 
@@ -33,19 +33,18 @@ Lectures will be conducted via **Zoom**, and course materials will be available 
 
 | **Week** | **Content** | **Readings** | **Activities & Deliverables** |
 |---------|------------|-------------|------------------------|
-| **1** | **Introduction to Artificial Intelligence** <br> - Historical Developments <br> - Fundamental Issues <br> - AI Applications | **Chapter 1: Introduction (Pages 1-34)** | - HW 0 Released |
+| **1** | **Introduction to Artificial Intelligence** <br> - Historical Developments <br> - Fundamental Issues <br> - AI Applications <br> Slides: [Lecture 1](slides/week1.pdf) | **Chapter 1: Introduction (Pages 1-34)** | - HW 0 Released |
 | **2** | **Problem Solving with Search** <br> - Uninformed Search (BFS, DFS, DLS, IDS) <br> - Informed/Heuristic Search (A*, Greedy Best-First) | **Chapter 3: Solving Problems by Searching (Pages 63-71)** <br> **Chapter 3.4-3.6: Search Algorithms (Pages 76-104)** | - Group formation submission |
 | **3** | **Advanced Search Techniques** <br> - Optimization Problems & Local Search <br> - Adversarial Search (Minimax, Alpha-Beta Pruning) <br> - Constraint Satisfaction Problems | **Chapter 5: Adversarial Search and Games (Pages 146-175)** <br> **Chapter 6: Constraint Satisfaction Problems (Pages 180-204)** |  |
 | **4** | **Knowledge & Reasoning** <br> - Logical Agents <br> - Propositional & Predicate Logic <br> - First-Order Logic <br> - Forward & Backward Chaining <br> - Fuzzy Logic <br> - Bayes Theorem | **Chapter 7: Logical Agents (Pages 208-251)** <br> **Chapter 8: First-Order Logic (Pages 251-278)** | - Project Initial Check-in <br> - HW 0 Due <br> - HW 1 Released |
-| **5** | **Planning in AI** <br> - Classical Planning <br> - Resource Scheduling <br> - Planning & Acting <br> - Reasoning under Uncertainty | **Chapter 11: Automated Planning (Pages 344-379)** |  |
-| **6** | **Probabilistic Reasoning** <br> - Bayesian Inference <br> - Bayesian Networks <br> - Markov Models | **Chapter 13: Probabilistic Reasoning (Pages 412-454)** | - Project Pitches |
-| **7** | **Probabilistic Reasoning (Continued)** <br> - Hidden Markov Models (HMMs) <br> - Markov Decision Processes (MDPs) <br> - Reinforcement Learning Introduction | **Chapter 14: Probabilistic Reasoning over Time (Pages 461-496)** | - HW 1 Due <br> - HW 2 Released |
+| **5 - 6** | **Probabilistic Reasoning** <br> - Bayesian Inference <br> - Bayesian Networks <br> - Markov Models <br> - Hidden Markov Models (HMMs) <br> - Markov Decision Processes (MDPs) <br> - Reinforcement Learning Introduction | **Chapter 13: Probabilistic Reasoning (Pages 412-454)** <br> **Chapter 14: Probabilistic Reasoning over Time (Pages 461-496)** | - Lecture by Dr. Roland Daynuath |
+| **7** | **Planning in AI** <br> - Classical Planning <br> - Resource Scheduling <br> - Planning & Acting <br> - Reasoning under Uncertainty | **Chapter 11: Automated Planning (Pages 344-379)** |  |
 | **8** | **Mid-term Exam** | **No Readings** | **Mid-term Exam** |
-| **9** | **Supervised Learning** <br> - Regression & Classification <br> - Decision Trees <br> - Naive Bayes & SVM | **Chapter 19: Learning from Examples (Pages 651-676)** | |
-| **10** | **Unsupervised Learning** <br> - Clustering (K-Means, Hierarchical) <br> - Dimensionality Reduction (PCA, t-SNE) | **Chapter 20: Learning Probabilistic Models (Pages 721-737)** | - HW 2 Due <br> - HW 3 Released |
+| **9** | **Supervised Learning** <br> - Regression & Classification <br> - Decision Trees <br> - Naive Bayes & SVM | **Chapter 19: Learning from Examples (Pages 651-676)** | - HW 2 Released |
+| **10** | **No Class This Week** | **No Readings** | |
 | **11** | **Neural Networks** <br> - Perceptron & MLP <br> - Backpropagation & Activation Functions <br> - Optimization Techniques | **Chapter 21: Deep Learning (Pages 750-768)** | - Project Progress Report |
-| **12** | **No Class This Week** | **No Readings** | |
-| **13** | **Deep Learning** <br> - CNNs & Image Processing <br> - RNNs & Sequence Models <br> - Transformers & Attention Mechanisms | **Chapter 21.6-21.8: Deep Learning Applications (Pages 772-784)** | - HW 3 Due |
+| **12** | **Deep Learning** <br> - CNNs & Image Processing <br> - RNNs & Sequence Models <br> - Transformers & Attention Mechanisms | **Chapter 21.6-21.8: Deep Learning Applications (Pages 772-784)** | |
+| **13** | **Deep Learning (Continued)** <br> - CNNs & Image Processing <br> - RNNs & Sequence Models <br> - Transformers & Attention Mechanisms | **Chapter 21.6-21.8: Deep Learning Applications (Pages 772-784)** | - HW 3 Due |
 | **14** | **Special Topics in AI** <br> - TBD | **TBD Readings** | |
 | **15** | **Project Presentations** | **No Readings** | - Final Project Write-up & Presentation |
 
