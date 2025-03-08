@@ -33,7 +33,7 @@ Lectures will be conducted via **Zoom**, and course materials will be available 
 
 | **Week** | **Content** | **Readings** | **Activities & Deliverables** |
 |---------|------------|-------------|------------------------|
-| **1** | **Introduction to Artificial Intelligence** <br> - Historical Developments <br> - Fundamental Issues <br> - AI Applications <br> Slides: [Lecture 1](slides/week1.pdf) | **Chapter 1: Introduction (Pages 1-34)** | - HW 0 Released |
+| **1** | **Introduction to Artificial Intelligence** <br> - Historical Developments <br> - Fundamental Issues <br> - AI Applications <br> Slides: [Lecture 1](slides/week1/week1.pdf) | **Chapter 1: Introduction (Pages 1-34)** | - HW 0 Released |
 | **2** | **Problem Solving with Search** <br> - Uninformed Search (BFS, DFS, DLS, IDS) <br> - Informed/Heuristic Search (A*, Greedy Best-First) | **Chapter 3: Solving Problems by Searching (Pages 63-71)** <br> **Chapter 3.4-3.6: Search Algorithms (Pages 76-104)** | - Group formation submission |
 | **3** | **Advanced Search Techniques** <br> - Optimization Problems & Local Search <br> - Adversarial Search (Minimax, Alpha-Beta Pruning) <br> - Constraint Satisfaction Problems | **Chapter 5: Adversarial Search and Games (Pages 146-175)** <br> **Chapter 6: Constraint Satisfaction Problems (Pages 180-204)** |  |
 | **4** | **Knowledge & Reasoning** <br> - Logical Agents <br> - Propositional & Predicate Logic <br> - First-Order Logic <br> - Forward & Backward Chaining <br> - Fuzzy Logic <br> - Bayes Theorem | **Chapter 7: Logical Agents (Pages 208-251)** <br> **Chapter 8: First-Order Logic (Pages 251-278)** | - Project Initial Check-in <br> - HW 0 Due <br> - HW 1 Released |
