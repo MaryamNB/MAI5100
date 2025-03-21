@@ -71,8 +71,8 @@ def tinyMazeSearch(problem: SearchProblem) -> List[Directions]:
     Returns a sequence of moves that solves tinyMaze.  For any other maze, the
     sequence of moves will be incorrect, so only use this for tinyMaze.
     """
-    s = Directions.SOUTH
-    w = Directions.WEST
+    # s = Directions.SOUTH
+    # w = Directions.WEST
     return  [s, s, w, s, w, w, s, w]
 
 def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
@@ -90,12 +90,33 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    explored_nodes = []
+    stack = []
+ 
+    if problem.isGoalState(problem.getStartState()):
+        return []
+
+    for node, direction, cost in problem.getSuccessors(problem.getStartState()):
+        stack.append((node, [direction]))
+    
+    while stack:
+        (node, direction) = stack.pop()
+        if node not in explored_nodes:
+            explored_nodes.append(node)
+        if problem.isGoalState(node):
+            return direction
+
+        for successor_node, successor_direction, cost in problem.getSuccessors(node):
+            if successor_node not in explored_nodes:
+                new_path = direction + [successor_direction]
+                stack.append((successor_node, new_path)) 
+    return 0
 
 def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    return 0
 
 def uniformCostSearch(problem: SearchProblem) -> List[Directions]:
     """Search the node of least total cost first."""
