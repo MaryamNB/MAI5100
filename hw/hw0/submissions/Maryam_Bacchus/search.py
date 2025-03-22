@@ -101,7 +101,7 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
         stack.append((node, [direction]))
     
     while stack:
-        (node, direction) = stack.pop()
+        (node, direction) = stack.pop(-1)
         if node not in explored_nodes:
             explored_nodes.append(node)
         if problem.isGoalState(node):
@@ -116,7 +116,32 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
 def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    return 0
+    
+    explored_nodes = []
+    stack = []
+
+    if problem.isGoalState(problem.getStartState()):
+        return []
+
+    explored_nodes.append(problem.getStartState())
+
+    for node, direction, cost in problem.getSuccessors(problem.getStartState()):
+        stack.append((node, [direction]))
+        explored_nodes.append(node)
+
+
+    while stack:
+        (node, direction) = stack.pop(0)
+        if problem.isGoalState(node):
+            return direction
+
+        for successor_node, successor_direction, cost in problem.getSuccessors(node):
+            if successor_node not in explored_nodes:
+                new_path = direction + [successor_direction]
+                stack.append((successor_node, new_path))
+                explored_nodes.append(successor_node)
+
+    return []
 
 def uniformCostSearch(problem: SearchProblem) -> List[Directions]:
     """Search the node of least total cost first."""
