@@ -123,15 +123,15 @@ def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
     if problem.isGoalState(problem.getStartState()):
         return []
 
-    explored_nodes.append(problem.getStartState())
-
-    for node, direction, cost in problem.getSuccessors(problem.getStartState()):
-        stack.append((node, [direction]))
-        explored_nodes.append(node)
-
+    stack.append((problem.getStartState(), []))
 
     while stack:
         (node, direction) = stack.pop(0)
+
+        if node in explored_nodes:
+            continue
+        explored_nodes.append(node)
+
         if problem.isGoalState(node):
             return direction
 
@@ -139,14 +139,39 @@ def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
             if successor_node not in explored_nodes:
                 new_path = direction + [successor_direction]
                 stack.append((successor_node, new_path))
-                explored_nodes.append(successor_node)
 
     return []
 
 def uniformCostSearch(problem: SearchProblem) -> List[Directions]:
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    explored_nodes = []
+    stack = []
+    
+    if problem.isGoalState(problem.getStartState()):
+        return []
+
+    stack.append((problem.getStartState(), [], 0))
+
+    while stack:
+        stack.sort(key=lambda node_obj: node_obj[2])
+        (node, direction, cost) = stack.pop(0)
+        
+        if node in explored_nodes:
+            continue
+        explored_nodes.append(node)
+
+        if problem.isGoalState(node):
+           return direction
+
+        for successor_node, successor_direction, successor_cost in problem.getSuccessors(node):
+            if successor_node not in explored_nodes:
+                new_path = direction + [successor_direction]
+                new_cost = cost + successor_cost
+                stack.append((successor_node, new_path, new_cost))
+
+    return []
 
 def nullHeuristic(state, problem=None) -> float:
     """
