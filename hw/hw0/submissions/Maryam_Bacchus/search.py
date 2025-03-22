@@ -97,13 +97,14 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
     if problem.isGoalState(problem.getStartState()):
         return []
 
-    for node, direction, cost in problem.getSuccessors(problem.getStartState()):
-        stack.append((node, [direction]))
-    
+    stack.append((problem.getStartState(), []))
+
     while stack:
         (node, direction) = stack.pop(-1)
-        if node not in explored_nodes:
-            explored_nodes.append(node)
+        if node in explored_nodes:
+            continue
+        explored_nodes.append(node)
+
         if problem.isGoalState(node):
             return direction
 
