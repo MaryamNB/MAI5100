@@ -187,23 +187,24 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directi
     "*** YOUR CODE HERE ***"
     
     explored_nodes = []
-    stack = []
+    queue = util.PriorityQueue()
     best_path = {}
 
     if problem.isGoalState(problem.getStartState()):
         return []
 
-    stack.append((problem.getStartState(), [], 0))
+    queue.push((problem.getStartState(), [], 0), 0 + heuristic(problem.getStartState(), problem))
+    best_path[(str(problem.getStartState()))] = 0
 
-    while stack:
-        stack.sort(key=lambda node_obj: node_obj[2] + heuristic(node_obj[0], problem))
-        (node, direction, cost) = stack.pop(0)
+    while not queue.isEmpty():
+        #stack.sort(key=lambda node_obj: node_obj[2] + heuristic(node_obj[0], problem))
+        (node, direction, cost) = queue.pop()
         
         node_str = str(node)
-        if node_str in best_path and cost >= best_path[node_str]:
-            continue
-        best_path[node_str] = cost
-
+        #if node_str in best_path and cost >= best_path[node_str]:
+        #    continue
+        #best_path[node_str] = cost
+        
         explored_nodes.append(node)
         
         if problem.isGoalState(node):
@@ -212,7 +213,12 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directi
         for successor_node, successor_direction, successor_cost in problem.getSuccessors(node):
             new_path = direction + [successor_direction]
             new_cost = cost + successor_cost
-            stack.append((successor_node, new_path, new_cost))
+            
+            successor_node_str = str(successor_node)
+            if successor_node_str not in best_path or new_cost < best_path[successor_node_str]:
+                best_path[successor_node_str] = new_cost
+                priority = new_cost + heuristic(successor_node, problem)
+                queue.push((successor_node, new_path, new_cost), priority)
     return []
 
 # Abbreviations
