@@ -198,10 +198,11 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directi
     while stack:
         stack.sort(key=lambda node_obj: node_obj[2] + heuristic(node_obj[0], problem))
         (node, direction, cost) = stack.pop(0)
-
-        if node in best_path and cost >= best_path[node]:
+        
+        node_str = str(node)
+        if node_str in best_path and cost >= best_path[node_str]:
             continue
-        best_path[node] = cost
+        best_path[node_str] = cost
 
         explored_nodes.append(node)
         
@@ -212,7 +213,6 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directi
             new_path = direction + [successor_direction]
             new_cost = cost + successor_cost
             stack.append((successor_node, new_path, new_cost))
-
     return []
 
 # Abbreviations
