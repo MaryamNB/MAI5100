@@ -362,8 +362,6 @@ class CornersProblem(search.SearchProblem):
             if self.walls[x][y]: return 999999
         return len(actions)
 
-
-
 def cornersHeuristic(state: Any, problem: CornersProblem):
     """
     A heuristic for the CornersProblem that you defined.
@@ -381,11 +379,16 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
+    # Calculate manhattan heuristic
+    
+    costs = [] 
+    position, unvisited_corners = state
+    if len(unvisited_corners) == 0:
+        return 0
+    for corner in unvisited_corners:
+        costs.append(util.manhattanDistance(position, corner)) 
+    return min(costs)
 
-    explored_corners = []
-
-    print("state is", state)
-    return 0 # Default to trivial solution
 
 
 
