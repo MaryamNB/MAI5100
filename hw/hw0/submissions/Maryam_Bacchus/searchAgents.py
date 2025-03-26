@@ -479,23 +479,22 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
 
     "*** YOUR CODE HERE ***"
-    costs = []
-    position, foodGrid = state
-    foodList = foodGrid.asList()
+    #costs = []
+    #position, foodGrid = state
+    #foodList = foodGrid.asList()
 
-    if len(foodList) == 0:
-        return 0
+    #if len(foodList) == 0:
+    #    return 0
     
-    min_distance = min(util.manhattanDistance(position, food) for food in foodList)
-    
-    max_food_dist = 0
-    if len(foodList) > 1:
-        for i, food1 in enumerate(foodList):
-            for food2 in foodList[i+1:]:
-                print("food1 is", food2)
-                dist = util.manhattanDistance(food1, food2)
-                max_food_dist = max(max_food_dist, dist)
-    return min_distance
+    #max_food_dist = 0
+    #if len(foodList) > 1:
+    #    for i, food1 in enumerate(foodList):
+    #        for food2 in foodList[i+1:]:
+    #            print("food1 is", food2)
+    #            dist = util.manhattanDistance(food1, food2)
+    #            max_food_dist = max(max_food_dist, dist)
+    #return min_distance
+    return 0
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
