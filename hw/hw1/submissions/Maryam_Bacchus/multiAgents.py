@@ -49,8 +49,6 @@ class ReflexAgent(Agent):
         chosenIndex = random.choice(bestIndices) # Pick randomly among the best
 
         "Add more of your code here if you want to"
-        print("chosen Index:", chosenIndex)
-        print("legal Moves:", legalMoves)
 
         return legalMoves[chosenIndex]
 
@@ -158,7 +156,57 @@ class MinimaxAgent(MultiAgentSearchAgent):
         Returns whether or not the game state is a losing state
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        legal_actions = gameState.getLegalActions(0)
+        best_score = float('-inf')
+        best_action = None
+
+        if not legal_actions:
+            return Directions.STOP
+        
+        for action in legal_actions:
+            successor = gameState.generateSuccessor(0, action)
+            score = self.min_agent(successor, self.depth, 1)
+            
+            if score > best_score:
+                best_score = score
+                best_action = action
+                
+        return best_action
+    
+    def max_agent(self, gameState, depth):
+
+        if gameState.isWin() or gameState.isLose() or depth == 0:
+            return self.evaluationFunction(gameState)
+
+        legal_actions = gameState.getLegalActions(0)
+        max_score = float('-inf')
+
+        for action in legal_actions:
+            successor = gameState.generateSuccessor(0, action)
+            score = self.min_agent(successor, depth, 1)
+            max_score = max(max_score, score)
+    
+        return max_score
+    
+    def min_agent(self, gameState, depth, ghost_index):
+
+        if gameState.isWin() or gameState.isLose() or depth == 0:
+            return self.evaluationFunction(gameState)
+        
+        min_score = float('inf')
+        legal_actions = gameState.getLegalActions(ghost_index)
+
+        for action in legal_actions:
+            successor = gameState.generateSuccessor(ghost_index, action)
+            if ghost_index == gameState.getNumAgents() - 1:
+                score = self.max_agent(successor, depth - 1)
+            else:
+                score = self.min_agent(successor, depth, ghost_index + 1)
+                
+            min_score = min(min_score, score)
+                    
+        return min_score
+
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
     """
