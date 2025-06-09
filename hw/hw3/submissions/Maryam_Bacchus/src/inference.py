@@ -18,7 +18,7 @@ from typing import List, Dict, Tuple
 import busters
 import game
 import bayesNet as bn
-from bayesNet import normalize
+from bayesNet import normalize, printStarterBayesNet
 import hunters
 from util import manhattanDistance, raiseNotDefined
 from factorOperations import joinFactorsByVariableWithCallTracking, joinFactors
@@ -72,10 +72,18 @@ def constructBayesNet(gameState: hunters.GameState):
     for x in range(X_RANGE):
         for y in range(Y_RANGE):
             positions.append((x, y))
-    
-    print("printing positions:", positions)
 
     variableDomainsDict[PAC] = positions
+    variableDomainsDict[GHOST0] = positions
+    variableDomainsDict[GHOST1] = positions
+
+    manhattan_distance = manhattanDistance((X_RANGE, Y_RANGE), (1, 1))
+
+    distances = list(range(manhattan_distance + MAX_NOISE + 1))
+
+    variableDomainsDict[OBS0] = distances
+    variableDomainsDict[OBS1] = distances
+
 
     "*** END YOUR CODE HERE ***"
 
