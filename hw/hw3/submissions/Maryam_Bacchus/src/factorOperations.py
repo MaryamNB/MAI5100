@@ -102,7 +102,32 @@ def joinFactors(factors: List[Factor]):
 
 
     "*** YOUR CODE HERE ***"
-    raiseNotDefined()
+    factors = list(factors)
+
+    print(factors)
+
+    unconditionedVars = set()
+    conditionedVars = set()
+    
+    for factor in factors:
+        unconditionedVars.update(factor.unconditionedVariables())
+        conditionedVars.update(factor.conditionedVariables())
+    
+    conditionedVars -= unconditionedVars
+
+    print(unconditionedVars, conditionedVars)
+
+    variableDomainsDict = factors[0].variableDomainsDict()
+
+    newFactor = Factor(unconditionedVars, conditionedVars, variableDomainsDict)
+
+    for value in newFactor.getAllPossibleAssignmentDicts():
+        probability = 1
+        for factor in factors:
+            probability *= factor.getProbability(value)
+        newFactor.setProbability(value, probability)
+    return newFactor
+
     "*** END YOUR CODE HERE ***"
 
 ########### ########### ###########
@@ -133,6 +158,7 @@ def eliminateWithCallTracking(callTrackingList=None):
         Factor.conditionedVariables
         Factor.variableDomainsDict
         """
+        print("test2")
         # autograder tracking -- don't remove
         if not (callTrackingList is None):
             callTrackingList.append(('eliminate', eliminationVariable))
@@ -153,8 +179,9 @@ def eliminateWithCallTracking(callTrackingList=None):
                     "unconditionedVariables: " + str(factor.unconditionedVariables()))
 
         "*** YOUR CODE HERE ***"
-        raiseNotDefined()
+        # raiseNotDefined()
         "*** END YOUR CODE HERE ***"
+        print("test")
 
     return eliminate
 
