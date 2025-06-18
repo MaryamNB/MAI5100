@@ -149,28 +149,5 @@ class GreedyBustersAgent(BustersAgent):
             [beliefs for i, beliefs in enumerate(self.ghostBeliefs)
              if livingGhosts[i+1]]
         "*** YOUR CODE HERE ***"
-
-        print("livingGhost position", livingGhostPositionDistributions)
-        if not livingGhostPositionDistributions:
-            return legal[0]
-
-        # TO BE COMPLETED
-        # mostLikelyGhostPositions = []
-        # for ghostBeliefs in livingGhostPositionDistributions:
-
-        #     maxProb = -1
-        #     mostLikelyPosition = None
-        #     for position, prob in ghostBeliefs.items():
-        #         if prob > maxProb:
-        #             maxProb = prob
-        #             mostLikelyPosition = position
-        #     mostLikelyGhostPositions.append(mostLikelyPosition)
-    
-        # minDistanceToClosestGhost = float('inf')
-
-        # Iterate over each legal action
-        # Then get clostest distance to ghost
-        # return clostest distance
-
-
+        raiseNotDefined()
         "*** END YOUR CODE HERE ***"
