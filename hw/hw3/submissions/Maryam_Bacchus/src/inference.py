@@ -678,7 +678,7 @@ class ParticleFilter(InferenceModule):
     
         for particle in self.particles:
             beliefs[particle] += 1
-            
+
         beliefs.normalize()
         
         return beliefs
@@ -701,7 +701,8 @@ class ParticleFilter(InferenceModule):
         the DiscreteDistribution may be useful.
         """
         "*** YOUR CODE HERE ***"
-        raiseNotDefined()
+        # 
+
         "*** END YOUR CODE HERE ***"
     
     ########### ########### ###########
